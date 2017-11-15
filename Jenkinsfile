@@ -6,7 +6,7 @@ pipeline {
         git(url: 'git@github.com:elenavnera/hello-world.git', branch: 'master', changelog: true, poll: true)
       }
     }
-    stage('Pool Bamboo for deployment') {
+    stage('Poll Bamboo for deployment') {
       steps {
         build(job: 'Bamboo-poll', quietPeriod: 30, wait: true)
       }
